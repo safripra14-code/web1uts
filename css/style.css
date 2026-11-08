@@ -1,0 +1,205 @@
+/* =====================================================
+   style.css — Tema "Toko Buku Online"
+   Dipakai bersama oleh seluruh halaman (external CSS)
+   ===================================================== */
+:root {
+    --primary: #205e7a;
+    --primary-dark: #17475c;
+    --accent: #e08a1e;
+    --bg: #f3f6f8;
+    --card: #ffffff;
+    --ink: #1f2a33;
+    --muted: #64757f;
+    --line: #dde6ec;
+    --ok: #2f9e52;
+    --bad: #d64545;
+    --warn: #e0a93b;
+    --shadow: 0 4px 14px rgba(20,50,70,.08);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+}
+a { color: var(--primary); }
+img { max-width: 100%; display: block; }
+
+/* ---------- Navbar ---------- */
+.navbar {
+    background: var(--primary);
+    color: #fff;
+    padding: 12px 22px;
+    display: flex; align-items: center; justify-content: space-between;
+    box-shadow: var(--shadow);
+    position: sticky; top: 0; z-index: 10;
+}
+.navbar .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; }
+.navbar .brand img { width: 34px; height: 34px; }
+.navbar nav { display: flex; gap: 6px; flex-wrap: wrap; }
+.navbar nav a {
+    color: #fff; text-decoration: none; padding: 7px 13px;
+    border-radius: 6px; font-size: 14px;
+}
+.navbar nav a:hover, .navbar nav a.active { background: rgba(255,255,255,.18); }
+.navbar .userbox { font-size: 13px; display: flex; align-items: center; gap: 10px; }
+
+/* ---------- Layout ---------- */
+.container { max-width: 1040px; margin: 24px auto; padding: 0 18px; }
+.page-title { font-size: 22px; color: var(--primary-dark); margin-bottom: 4px; }
+.page-sub { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+
+.card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 12px; padding: 20px; box-shadow: var(--shadow);
+}
+.grid { display: grid; gap: 18px; }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+/* ---------- Buttons ---------- */
+.btn {
+    display: inline-block; padding: 10px 18px; border: none; border-radius: 8px;
+    background: var(--primary); color: #fff; font-size: 14px; font-weight: 600;
+    cursor: pointer; text-decoration: none; text-align: center; transition: background .15s;
+}
+.btn:hover { background: var(--primary-dark); }
+.btn-accent { background: var(--accent); }
+.btn-accent:hover { background: #c4760f; }
+.btn-ghost { background: #eef3f6; color: var(--primary-dark); }
+.btn-ghost:hover { background: #e0e9ee; }
+.btn-danger { background: var(--bad); }
+.btn-danger:hover { background: #b83636; }
+.btn-sm { padding: 5px 11px; font-size: 12.5px; border-radius: 6px; }
+.btn-block { display: block; width: 100%; }
+
+/* ---------- Forms ---------- */
+.field { margin-bottom: 15px; }
+.field label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+.field input, .field select, .field textarea {
+    width: 100%; padding: 11px 12px; border: 1px solid var(--line);
+    border-radius: 8px; font-size: 14px; font-family: inherit; background: #fff;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+    outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(32,94,122,.12);
+}
+.hint { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+/* ---------- Alert message ---------- */
+.msg { margin-top: 12px; padding: 11px 14px; border-radius: 8px; font-size: 14px; border-left: 4px solid; }
+.msg:empty { display: none; }
+.msg.ok   { background: #ecf8ef; border-color: var(--ok);  color: #1e7a38; }
+.msg.bad  { background: #fdeeee; border-color: var(--bad); color: #a32727; }
+.msg.warn { background: #fdf6e7; border-color: var(--warn);color: #8a6414; }
+
+/* ---------- Table ---------- */
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { padding: 11px 12px; border-bottom: 1px solid var(--line); text-align: left; }
+th { background: #eef3f6; color: var(--primary-dark); font-weight: 600; }
+tbody tr:hover { background: #f7fafb; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+
+/* ---------- Badge ---------- */
+.badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+.badge-ok { background: #e3f5e9; color: #1e7a38; }
+.badge-proc { background: #fdf6e7; color: #8a6414; }
+.badge-ship { background: #e6f0f6; color: #205e7a; }
+
+/* ---------- Login page ---------- */
+.login-wrap {
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #205e7a, #17475c); padding: 20px;
+}
+.login-card {
+    background: #fff; border-radius: 16px; padding: 34px 30px; width: 100%;
+    max-width: 390px; box-shadow: 0 18px 50px rgba(0,0,0,.25); text-align: center;
+}
+.login-card img.logo { width: 64px; height: 64px; margin: 0 auto 12px; }
+.login-card h1 { font-size: 22px; color: var(--primary-dark); }
+.login-card p.sub { color: var(--muted); font-size: 13px; margin-bottom: 22px; }
+.login-card .field { text-align: left; }
+.login-links { margin-top: 16px; font-size: 13px; display: flex; justify-content: space-between; }
+.login-links a { cursor: pointer; }
+
+/* ---------- Modal box ---------- */
+.modal-overlay {
+    position: fixed; inset: 0; background: rgba(15,30,40,.55);
+    display: none; align-items: center; justify-content: center; z-index: 50; padding: 16px;
+}
+.modal-overlay.show { display: flex; }
+.modal {
+    background: #fff; border-radius: 14px; padding: 26px; width: 100%; max-width: 420px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.3); animation: pop .18s ease;
+}
+@keyframes pop { from { transform: scale(.92); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.modal h3 { color: var(--primary-dark); margin-bottom: 6px; }
+.modal .modal-sub { color: var(--muted); font-size: 13px; margin-bottom: 16px; }
+.modal-close { float: right; cursor: pointer; color: var(--muted); font-size: 20px; line-height: 1; border: none; background: none; }
+
+/* ---------- Dashboard menu ---------- */
+.greeting-card {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff; border-radius: 14px; padding: 26px; margin-bottom: 22px;
+}
+.greeting-card h2 { font-size: 24px; margin-bottom: 4px; }
+.greeting-card p { opacity: .9; font-size: 14px; }
+.menu-tile {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 24px; text-align: center; text-decoration: none; color: var(--ink);
+    box-shadow: var(--shadow); transition: transform .15s, box-shadow .15s; display: block;
+}
+.menu-tile:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(20,50,70,.14); }
+.menu-tile .ico { font-size: 34px; display: block; margin-bottom: 10px; }
+.menu-tile h3 { color: var(--primary-dark); font-size: 16px; margin-bottom: 4px; }
+.menu-tile p { font-size: 12.5px; color: var(--muted); }
+
+/* ---------- Catalog cards ---------- */
+.book-card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+.book-card .cover { aspect-ratio: 3/4; overflow: hidden; background: #e9eef1; }
+.book-card .cover img { width: 100%; height: 100%; object-fit: cover; }
+.book-card .body { padding: 13px 14px; flex: 1; display: flex; flex-direction: column; }
+.book-card h3 { font-size: 15px; margin-bottom: 2px; color: var(--primary-dark); }
+.book-card .author { font-size: 12.5px; color: var(--muted); margin-bottom: 8px; }
+.book-card .price { font-weight: 700; color: var(--accent); margin-top: auto; }
+.book-card .meta { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+/* ---------- Progress bar (tracking) ---------- */
+.progress-track { background: #e6edf1; border-radius: 20px; height: 14px; overflow: hidden; margin: 8px 0; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--accent)); border-radius: 20px; transition: width .4s; }
+.steps { display: flex; justify-content: space-between; margin-top: 14px; }
+.step { flex: 1; text-align: center; font-size: 12px; color: var(--muted); position: relative; }
+.step .dot { width: 20px; height: 20px; border-radius: 50%; background: #cdd8df; color: #fff; display: flex; align-items: center; justify-content: center; margin: 0 auto 6px; font-size: 11px; }
+.step.done .dot { background: var(--ok); }
+.step.done { color: var(--ink); font-weight: 600; }
+
+.detail-list { list-style: none; }
+.detail-list li { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px dashed var(--line); font-size: 14px; }
+.detail-list li span:first-child { color: var(--muted); }
+
+/* ---------- Timeline (riwayat perjalanan tracking) ---------- */
+.timeline { list-style: none; margin-top: 10px; }
+.timeline li { position: relative; padding: 0 0 16px 24px; border-left: 2px solid var(--line); }
+.timeline li:last-child { border-left-color: transparent; padding-bottom: 0; }
+.timeline .tl-dot { position: absolute; left: -7px; top: 3px; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); }
+.timeline li:first-child .tl-dot { background: var(--accent); }
+.timeline .tl-time { font-size: 12px; color: var(--muted); }
+.timeline .tl-desc { font-size: 14px; }
+
+.footer { text-align: center; color: var(--muted); font-size: 12.5px; padding: 24px; }
+
+.toolbar { display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-end; margin-bottom: 18px; }
+.toolbar .field { margin-bottom: 0; }
+.summary-row { display: flex; justify-content: space-between; font-size: 15px; padding: 10px 0; }
+.summary-row.total { font-weight: 700; font-size: 18px; color: var(--primary-dark); border-top: 2px solid var(--line); margin-top: 6px; padding-top: 12px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 760px) {
+    .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    .grid-2 { grid-template-columns: 1fr; }
+    .navbar { flex-direction: column; gap: 10px; align-items: flex-start; }
+}
+@media (max-width: 480px) {
+    .grid-3 { grid-template-columns: 1fr; }
+}

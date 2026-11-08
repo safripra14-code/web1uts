@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat Transaksi — Toko Buku Online</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/data.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body data-page="riwayat">
+    <header class="navbar">
+        <div class="brand"><img src="assets/logo.png" alt="Logo"> Toko Buku Online</div>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="stok.html">Katalog</a>
+            <a href="checkout.html">Pemesanan</a>
+            <a href="tracking.html">Tracking</a>
+            <a href="riwayat.html" class="active">Riwayat</a>
+        </nav>
+        <div class="userbox"><button id="btnLogout" class="btn btn-ghost btn-sm">Logout</button></div>
+    </header>
+
+    <main class="container">
+        <h2 class="page-title">History Transaksi</h2>
+        <p class="page-sub">Daftar transaksi yang telah dilakukan.</p>
+
+        <div class="card" style="padding:0;overflow-x:auto">
+            <table>
+                <thead>
+                    <tr><th>Kode Transaksi</th><th>Tanggal</th><th>Pembeli</th><th class="text-right">Total</th><th class="text-center">Status</th></tr>
+                </thead>
+                <tbody id="tbodyRiwayat"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="footer">&copy; 2026 Toko Buku Online — UTS Pemrograman Web</footer>
+</body>
+</html>

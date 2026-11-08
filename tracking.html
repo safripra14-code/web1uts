@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking — Toko Buku Online</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/data.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body data-page="tracking">
+    <header class="navbar">
+        <div class="brand"><img src="assets/logo.png" alt="Logo"> Toko Buku Online</div>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="stok.html">Katalog</a>
+            <a href="checkout.html">Pemesanan</a>
+            <a href="tracking.html" class="active">Tracking</a>
+            <a href="riwayat.html">Riwayat</a>
+        </nav>
+        <div class="userbox"><button id="btnLogout" class="btn btn-ghost btn-sm">Logout</button></div>
+    </header>
+
+    <main class="container">
+        <h2 class="page-title">Informasi Pengiriman</h2>
+        <p class="page-sub">Masukkan Nomor Delivery Order untuk melacak status pesanan.</p>
+
+        <div class="card" style="margin-bottom:18px">
+            <form id="formCari" class="toolbar" style="margin-bottom:0">
+                <div class="field" style="flex:1">
+                    <label for="inputDO">Nomor Delivery Order</label>
+                    <input type="text" id="inputDO" placeholder="mis. 20230012">
+                </div>
+                <button type="submit" class="btn">Cari</button>
+            </form>
+            <p id="pesanCari" class="msg"></p>
+            <p class="hint" style="margin-top:8px">Contoh No. DO: 20230012 · 20230013</p>
+        </div>
+
+        <div id="hasilTracking"></div>
+    </main>
+
+    <footer class="footer">&copy; 2026 Toko Buku Online — UTS Pemrograman Web</footer>
+</body>
+</html>

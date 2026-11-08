@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login — Toko Buku Online</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/data.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body data-page="login">
+    <div class="login-wrap">
+        <div class="login-card">
+            <img src="assets/logo.png" alt="Logo" class="logo">
+            <h1>Toko Buku Online</h1>
+            <p class="sub">Masuk untuk mengelola pesanan &amp; katalog buku</p>
+
+            <form id="formLogin" novalidate>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="nama@email.com">
+                </div>
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-block">Login</button>
+            </form>
+
+            <p id="pesanLogin" class="msg"></p>
+
+            <div class="login-links">
+                <a id="linkLupa">Lupa Password?</a>
+                <a id="linkDaftar">Daftar</a>
+            </div>
+
+            <p class="hint" style="margin-top:16px">
+                Akun demo (dari data.js):<br>
+                <b>rina@gmail.com</b> / rina123 · <b>agus@gmail.com</b> / agus123 · <b>siti@gmail.com</b> / siti123
+            </p>
+        </div>
+    </div>
+
+    <!-- Modal: Lupa Password -->
+    <div class="modal-overlay" id="modalLupa">
+        <div class="modal">
+            <button class="modal-close" data-close="modalLupa">&times;</button>
+            <h3>Lupa Password</h3>
+            <p class="modal-sub">Masukkan email terdaftar, kami kirim tautan reset.</p>
+            <form id="formLupa">
+                <div class="field">
+                    <label for="emailLupa">Email</label>
+                    <input type="email" id="emailLupa" placeholder="nama@email.com" required>
+                </div>
+                <button type="submit" class="btn btn-block">Kirim Tautan Reset</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Daftar -->
+    <div class="modal-overlay" id="modalDaftar">
+        <div class="modal">
+            <button class="modal-close" data-close="modalDaftar">&times;</button>
+            <h3>Daftar Akun Baru</h3>
+            <p class="modal-sub">Lengkapi data untuk membuat akun.</p>
+            <form id="formDaftar">
+                <div class="field">
+                    <label for="dNama">Nama Lengkap</label>
+                    <input type="text" id="dNama" placeholder="Nama lengkap" required>
+                </div>
+                <div class="field">
+                    <label for="dEmail">Email</label>
+                    <input type="email" id="dEmail" placeholder="nama@email.com" required>
+                </div>
+                <div class="field">
+                    <label for="dPass">Password</label>
+                    <input type="password" id="dPass" placeholder="Minimal 6 karakter" required minlength="6">
+                </div>
+                <button type="submit" class="btn btn-accent btn-block">Daftar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

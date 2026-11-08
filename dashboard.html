@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — Toko Buku Online</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/data.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body data-page="dashboard">
+    <header class="navbar">
+        <div class="brand"><img src="assets/logo.png" alt="Logo"> Toko Buku Online</div>
+        <nav>
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="stok.html">Katalog</a>
+            <a href="checkout.html">Pemesanan</a>
+            <a href="tracking.html">Tracking</a>
+            <a href="riwayat.html">Riwayat</a>
+        </nav>
+        <div class="userbox"><button id="btnLogout" class="btn btn-ghost btn-sm">Logout</button></div>
+    </header>
+
+    <main class="container">
+        <div class="greeting-card">
+            <h2 id="greeting">Selamat datang!</h2>
+            <p id="greetingSub">Memuat sapaan…</p>
+        </div>
+
+        <h2 class="page-title">Menu Utama</h2>
+        <p class="page-sub">Pilih menu untuk mulai mengelola toko.</p>
+
+        <div class="grid grid-2">
+            <a href="stok.html" class="menu-tile">
+                <span class="ico">📚</span>
+                <h3>Informasi Stok / Katalog</h3>
+                <p>Lihat katalog buku &amp; tambah stok baru</p>
+            </a>
+            <a href="tracking.html" class="menu-tile">
+                <span class="ico">🚚</span>
+                <h3>Tracking Pengiriman</h3>
+                <p>Lacak status pengiriman pesanan</p>
+            </a>
+            <a href="checkout.html" class="menu-tile">
+                <span class="ico">🧾</span>
+                <h3>Laporan Pemesanan</h3>
+                <p>Kelola pesanan &amp; proses pembayaran</p>
+            </a>
+            <a href="riwayat.html" class="menu-tile">
+                <span class="ico">🕑</span>
+                <h3>History Transaksi</h3>
+                <p>Riwayat transaksi yang telah dilakukan</p>
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer">&copy; 2026 Toko Buku Online — UTS Pemrograman Web · Syafri Prayogo (312510500)</footer>
+</body>
+</html>

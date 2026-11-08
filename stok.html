@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog &amp; Stok — Toko Buku Online</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/data.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body data-page="stok">
+    <header class="navbar">
+        <div class="brand"><img src="assets/logo.png" alt="Logo"> Toko Buku Online</div>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="stok.html" class="active">Katalog</a>
+            <a href="checkout.html">Pemesanan</a>
+            <a href="tracking.html">Tracking</a>
+            <a href="riwayat.html">Riwayat</a>
+        </nav>
+        <div class="userbox"><button id="btnLogout" class="btn btn-ghost btn-sm">Logout</button></div>
+    </header>
+
+    <main class="container">
+        <div class="toolbar" style="justify-content:space-between">
+            <div>
+                <h2 class="page-title">Informasi Stok / Katalog Buku</h2>
+                <p class="page-sub">Data ditampilkan dinamis dari <code>dataKatalogBuku</code> pada data.js.</p>
+            </div>
+            <button id="btnTambahStok" class="btn btn-accent">+ Tambah Stok Buku</button>
+        </div>
+
+        <!-- Katalog kartu -->
+        <div class="grid grid-3" id="gridKatalog"></div>
+
+        <!-- Tabel stok -->
+        <h3 class="page-title" style="font-size:18px;margin:26px 0 12px">Tabel Stok</h3>
+        <div class="card" style="padding:0;overflow-x:auto">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kode</th><th>Nama Barang</th><th>Jenis</th>
+                        <th class="text-center">Edisi</th><th class="text-center">Stok</th><th class="text-right">Harga</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyStok"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Modal tambah stok -->
+    <div class="modal-overlay" id="modalStok">
+        <div class="modal">
+            <button class="modal-close" data-close="modalStok">&times;</button>
+            <h3>Tambah Stok Buku</h3>
+            <p class="modal-sub">Baris baru ditambahkan ke katalog &amp; tabel menggunakan DOM.</p>
+            <form id="formStok" novalidate>
+                <div class="grid grid-2" style="gap:12px">
+                    <div class="field"><label for="sKode">Kode Barang</label><input type="text" id="sKode" placeholder="mis. ASIP4302"></div>
+                    <div class="field"><label for="sJenis">Jenis Barang</label><input type="text" id="sJenis" placeholder="mis. Buku Ajar"></div>
+                </div>
+                <div class="field"><label for="sNama">Nama Barang</label><input type="text" id="sNama"></div>
+                <div class="grid grid-3" style="gap:12px">
+                    <div class="field"><label for="sEdisi">Edisi</label><input type="text" id="sEdisi" placeholder="mis. 1"></div>
+                    <div class="field"><label for="sStok">Stok</label><input type="number" id="sStok" min="0"></div>
+                    <div class="field"><label for="sHarga">Harga (Rp)</label><input type="number" id="sHarga" min="0"></div>
+                </div>
+                <button type="submit" class="btn btn-block">Simpan Buku</button>
+                <p id="pesanStok" class="msg"></p>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">&copy; 2026 Toko Buku Online — UTS Pemrograman Web</footer>
+</body>
+</html>
