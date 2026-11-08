@@ -2,7 +2,7 @@
 
 Aplikasi web **front-end** sederhana untuk pemesanan buku pada toko online. Seluruh data tidak diambil dari server/database, melainkan dari variabel/konstanta JavaScript dalam format **Array JSON** pada `js/data.js`.
 
-**Identitas:** Syafri Prayogo — 312510500 — TI.25.C.13
+**Identitas:** Syafri Prayogo — 312510500 — TI.25.C.3
 
 ## Akun Demo (Login) — dari `data.js` (`dataPengguna`)
 
